@@ -1,0 +1,792 @@
+<?xml version="1.0"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
+"http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY legal SYSTEM "gpl.xml">
+<!ENTITY appversion "0.52">
+<!ENTITY app "<application>Canaima-Semilla</application>">
+<!ENTITY manrevision "0.1">
+<!ENTITY date "2012">
+]>
+<!-- =============Document============================= -->
+<article id="index" lang="es">
+
+<articleinfo> 
+<title>Manual de Canaima Semilla</title>       
+<copyright> 
+	<year>2012</year> 
+	<holder>Carlos Espinoza</holder> 
+</copyright>
+<copyright> 
+	<year>2012</year> 
+	<holder>Nixon Molina</holder> 
+</copyright>
+
+<authorgroup> 
+	<author> 
+		<firstname>Carlos Espinoza, </firstname>
+		<surname>Nixon Molina</surname>  
+	</author>
+
+</authorgroup>
+
+<releaseinfo>
+	Este manual describe los pasos de Canaima-Semilla-Gui.
+</releaseinfo> 
+
+<legalnotice>
+	<title>
+		Aviso legal
+	</title>	
+	<para> 
+		Este documento se distribuye bajo los términos de la
+	Licencia Pública General GNU tal como la publica la Free
+	Software Foundation; en la versión 3 de la Licencia, o (a su
+	elección) cualquier versión posterior. Puede encontrar una
+	copia de esta licencia en este manual o en el archivo incluido con el
+	código fuente de este programa.
+	</para>
+</legalnotice>
+
+<legalnotice> 
+	<title>
+		Retroalimentación
+	</title>
+	<para>
+		Para informar de un fallo o hacer cualquier sugerencia
+		concerniente a &app; o este manual, envié un correo a la siguiente dirección <email>desarrolladores@canaima.softwarelibre.gob.ve</email>.
+	</para>
+	
+
+</legalnotice> 
+</articleinfo> 
+
+<indexterm zone="index"> 
+	<primary>Canaima Semilla</primary> 
+</indexterm> 
+<indexterm zone="index"> 
+	<primary>Paquetes</primary>
+</indexterm>
+<indexterm zone="index"> 
+	<primary>Software</primary>
+</indexterm>
+
+<sect1 id="c-s-introduction"> 
+	<title>
+		Introducción
+	</title> 
+	<para>
+		Canaima Semilla es un paquete diseñado para facilitar a 		individuales, colectivos e instituciones la creación de 		distribuciones GNU/Linux personalizadas y adaptadas a sus 			necesidades (lo que conocemos como sabores), partiendo de la 			Metadistribución Canaima GNU/Linux.
+		
+	</para>
+	<para>
+		Actualmente existen varios sabores de Canaima:
+
+	        <itemizedlist>
+		        <listitem>
+			        <para>
+				        Canaima Primera Base: Sabor con 					aplicaciones básicas, desde el cuál se 						pueden instalar el resto de los sabores.
+	                        </para>
+		        </listitem>
+			<listitem>
+				<para>
+					Canaima Popular: Sabor ligero de fácil 						distribución, con aplicaciones de uso 						común.
+	                        </para>
+		        </listitem>
+			<listitem>
+				<para>
+	                                Canaima Institucional: Sabor utilizado 						en la Administración Pública Nacional 						venezolana para fortalecer la Soberanía 					Tecnológica dentro del estado.
+		                </para>
+	                </listitem>
+		        <listitem>
+			        <para>
+				        Canaima Educativo: Proyecto educativo 						liberador para los niños de la 						educación primaria.
+	                        </para>
+		        </listitem>
+			<listitem>
+				<para>
+					Canaima Forense: Sabor que facilita la 						investigación forense en sistemas 						informáticos.
+	                        </para>
+	                </listitem>
+		</itemizedlist>
+	</para>
+	<para>
+		Mediante una serie de sencillos pasos, podrás crear una imagen 			instalable de los sabores antes mencionados, o si lo prefieres, 		crear tu propio Sabor Canaima. 	
+	</para>
+
+	<figure id="portada"> 
+		<screenshot> 
+			<mediaobject>
+				<imageobject>
+					<imagedata fileref="figures/portada.png" 
+					format="PNG"/> 
+				</imageobject>
+			  </mediaobject> 
+		</screenshot> 
+	</figure>
+
+	
+	<para>
+		Debe seleccionar alguna de las opciones:  
+	</para>
+
+	<para>
+		Crear ISO'S: Imagen ISO es un archivo donde se almacena una copia o imagen exacta de un sistema de ficheros, normalmente un disco óptico. Se rige por el estándar ISO 9660 que le da nombre. Algunos de los usos más comunes incluyen la distribución de sistemas operativos, tales como sistemas GNU/Linux, BSD o Live CDs.  
+	</para>
+	
+	<para>
+		Construir Nuevo Sabor: Es una distribución de Canaima GNU/Linux,personalizada mediante parámetros que permiten adaptarlo a sus necesidades o de una institución.
+	</para>
+
+</sect1>
+
+	
+
+<sect1 id="c-s-construir"> 
+	<title>Construir ISO'S</title> 
+
+
+	<para>
+		Canaima Semilla puede crear imágenes instalables (ISO o IMG) basado en los perfiles de sabores existentes. Puede especificársele el tipo de Medio, la arquitectura a construir, y el sabor. Las imágenes resultantes del proceso de construcción se guardan en el directorio /usr/share/canaima-semilla/semillero/.
+
+	</para>
+	<para>
+		Parámetros	
+		<itemizedlist>
+		        <listitem>
+			        <para>
+				        Medio: Tipo de imagen que será generada. Coloca “iso” para una imagen ISO grabable en CD/DVD o “usb” para una imagen IMG grabable en dispositivos USB.
+	                        </para>
+		        </listitem>	
+		
+			<listitem>
+			        <para>
+				        Arquitectura: Arquitectura soportada por la imagen resultante. Canaima GNU/Linux soporta i386 y amd64.
+	                        </para>
+		        </listitem>
+			
+			<listitem>
+			        <para>
+				        Sabor: Sabor Canaima contenido en la imagen instalable. Debe estar definida en el directorio de los perfiles para poder funcionar.
+	                        </para>
+		        </listitem>		
+		</itemizedlist>
+	</para>
+	
+	<figure id="0"> 
+		<screenshot> 
+			<mediaobject>
+				<imageobject>
+					<imagedata fileref="figures/0.png" 
+					format="PNG"/> 
+				</imageobject>
+			  </mediaobject> 
+		</screenshot> 
+	</figure>
+
+	<para>
+		Para crear una imagen instalable debe seleccionar todos los parámetros establecidos:
+	</para>
+	
+	<para>
+		1. Seleccione el Medio que desea crear:	
+	</para>
+	
+	<para>
+		En este paso debe seleccionar el tipo de imagen que desea generar CD/DVD o USB.	
+	</para>
+	<figure id="1"> 
+		<screenshot> 
+			<mediaobject>
+				<imageobject>
+					<imagedata fileref="figures/1.png" 
+					format="PNG"/> 
+				</imageobject>
+			  </mediaobject> 
+		</screenshot> 
+	</figure>
+	
+	<para>		
+		 2. Seleccione la Arquitectura:	
+	</para>
+
+	<para>
+		En este paso debe seleccionar el tipo de arquitectura soportada por la imagen 32 Bits(i386) o 64 Bits (amd64). 
+	</para>
+
+	<figure id="2"> 
+		<screenshot> 
+			<mediaobject>
+				<imageobject>
+					<imagedata fileref="figures/2.png" 
+					format="PNG"/> 
+				</imageobject>
+			  </mediaobject> 
+		</screenshot> 
+	</figure>
+		
+	<note>
+		<para>
+			Si su computador presenta una arquitectura i386 no podra crear imagenes amd64.
+		</para>
+	</note>
+	
+	<para>		
+		 3. Seleccione alguno de los sabores existentes:
+	</para>
+
+	<para>		
+		 En este paso debe ver los sabores existente en la ventana desplegable y elegir cual desea crear.
+	</para>
+
+
+	<figure id="3"> 
+		<screenshot> 
+			<mediaobject>
+				<imageobject>
+					<imagedata fileref="figures/3.png" 
+					format="PNG"/> 
+				</imageobject>
+			  </mediaobject> 
+		</screenshot> 
+	</figure>
+
+	<para>		
+		 Desea crear el sabor seleccionado: Generar
+	</para>
+
+	<para>		
+		 En este paso debe hacer click en Boton Generar para crear la ISO'S con los parametros seleccionados.
+	</para>
+	
+	<note>
+		<para>
+			Debe tener en cuenta que si no selecciona todos los parámetros no podrá generar la imagen. 
+		</para>
+	</note>
+
+	<caution>
+		<para>
+			Es importante tener en cuenta que, si no posee una conexión a internet no podrá crear la imagen.
+		</para>
+
+	</caution>
+
+	<figure id="4"> 
+		<screenshot> 
+			<mediaobject>
+				<imageobject>
+					<imagedata fileref="figures/4.png" 
+					format="PNG"/> 
+				</imageobject>
+			  </mediaobject> 
+		</screenshot> 
+	</figure>
+
+	<note>
+		<para>
+			Los procesos que generan la imagen pueden llevar un tiempo, le recomendamos tomarse un buen café Venezolano mientras se construye la 				imagen. 
+		</para>
+	</note>
+
+	<para>		
+		 Finalizado
+	</para>
+
+	<para>		
+		Las imágenes resultantes del proceso de construcción se guardan en el directorio /usr/share/canaima-semilla/semillero/.
+	</para>
+
+	<figure id="5"> 
+		<screenshot> 
+			<mediaobject>
+				<imageobject>
+					<imagedata fileref="figures/5.png" 
+					format="PNG"/> 
+				</imageobject>
+			  </mediaobject> 
+		</screenshot> 
+	</figure>
+
+</sect1>
+
+
+<sect1 id="c-s-cancelar"> 
+	<title>
+		Cancelar creación de ISO'S
+	</title>
+	<para>
+		En caso de que desee cancelar la creación de la imagen solo debe seguir los siguientes pasos: 	 
+	</para>
+
+	<para>
+		1. Hacer click en el botón de Cancelar. Se desplegara una ventana emergente de decisión, si esta seguro que desea cancelar la construcción de la ISO'S hacer click en “SI”.	
+	</para>
+	
+	<figure id="cancelar1"> 
+		<screenshot> 
+			<mediaobject>
+				<imageobject>
+					<imagedata fileref="figures/cancelar1.png" 
+					format="PNG"/> 
+				</imageobject>
+			  </mediaobject> 
+		</screenshot> 
+	</figure>
+	
+	<para>
+		2. Se desplegará un ventana emergente que indicara que la ISO'S que estaba creando ha sido cancela de forma correcta.
+	</para>
+
+	<figure id="cancelar2"> 
+		<screenshot> 
+			<mediaobject>
+				<imageobject>
+					<imagedata fileref="figures/cancelar2.png" 
+					format="PNG"/> 
+				</imageobject>
+			  </mediaobject> 
+		</screenshot> 
+	</figure>
+
+	<para>
+		3. Al hacer click en aceptar, el botón Generar volverá a estar activo para poder crear nuevas imágenes.	
+	</para>
+
+	<figure id="cancelar3"> 
+		<screenshot> 
+			<mediaobject>
+				<imageobject>
+					<imagedata fileref="figures/cancelar3.png" 
+					format="PNG"/> 
+				</imageobject>
+			  </mediaobject> 
+		</screenshot> 
+	</figure>
+
+</sect1>
+
+<sect1 id="c-s-error"> 
+	<title>
+		Errores al crear ISO'S
+	</title> 
+	<para>
+		En caso de que ocurra un error en la construcción de la imagen saldra un ventana con el siguiente mensaje:
+	</para>
+
+	<figure id="error"> 
+		<screenshot> 
+			<mediaobject>
+				<imageobject>
+					<imagedata fileref="figures/error.png" 
+					format="PNG"/> 
+				</imageobject>
+			  </mediaobject> 
+		</screenshot> 
+	</figure>
+	<para>
+		Para informar  sobre el problema ocurrido debe seguir los siguientes pasos:
+	</para>
+	
+	<para>
+		1. Debe ir a la siguiente dirección /usr/share/canaima-semilla/semillero/ y encontrar un archivo llamado binary.log que contiene todos los procesos de construcción de la imagen.  
+	</para>
+	<figure id="binary"> 
+		<screenshot> 
+			<mediaobject>
+				<imageobject>
+					<imagedata fileref="figures/binary.png" 
+					format="PNG"/> 
+				</imageobject>
+			  </mediaobject> 
+		</screenshot> 
+	</figure>
+	<para>
+		2. Ingrese en su dirección de correo electrónico y mande ese archivo a la siguiente dirección <email>desarrolladores@canaima.softwarelibre.gob.ve</email>.
+	</para>
+
+	<note>
+		<para>
+			Debe esperar la respuesta del equipo de desarrollo que sera enviada a su dirección de correo a la brevedad posible.
+		</para>
+	</note>
+</sect1>
+
+
+<sect1 id="c-s-distribuciones"> 
+	<title>
+		Construir Nuevas Distribuciones
+	</title> 
+	<para>
+		Canaima Semilla facilita la creación de nuevas distribuciones del Sistema Operativo Canaima conocidas como Sabores Canaima, mediante el establecimiento de reglas o perfiles que definen los componentes que integran el sabor. 
+	</para>
+
+	<para>
+		Un perfil está compuesto de varios archivos con nombres específicos colocados dentro de una carpeta. 
+	</para>
+
+	<para>
+		Al iniciar Canaima Semilla, muestra la ventana Bienvenido, una vez allí debe seleccionar "Construir Nuevo Sabor" 
+	</para>
+
+		<figure id="bienvenido">
+			<title>Ejemplo de la ventana Bienvenido</title>
+			<screenshot> 
+				<mediaobject>
+					<imageobject>
+						<imagedata fileref="figures/paso0.png" 
+						format="PNG"/> 
+					</imageobject>
+			  	</mediaobject> 
+			</screenshot> 
+		</figure>
+
+	<para>
+		A continuación se enumeran los pasos para crear una una nueva distribución: 
+	</para>
+	
+	<sect2 id="crear_carpeta_principal"> 
+		
+	  <title>Paso 1</title>
+
+		<para>
+			<menuchoice><guimenu>Crear Carpeta </guimenu></menuchoice>La cual será creada con el nombre del sabor en letras minúsculas.
+		</para>
+
+		<figure id="crear_carpeta">
+			<title>Ejemplo de una ventana para crear la carpeta contenedora del sabor</title>
+			<screenshot> 
+				<mediaobject>
+					<imageobject>
+						<imagedata fileref="figures/paso1.png" 
+						format="PNG"/> 
+					</imageobject>
+			  	</mediaobject> 
+			</screenshot> 
+		</figure>
+	
+
+		<note>
+			<para>
+			Para que la carpeta pueda ser creada debe dar clic en el boton "Siguiente>", de lo contrario la carpeta no se creará.
+			</para>
+		</note>
+
+		<figure id="carpeta_creada">
+			<title>Ejemplo de una ventana con la carpeta del sabor creada con éxito</title>
+			<screenshot> 
+				<mediaobject>
+					<imageobject>
+						<imagedata fileref="figures/paso1-2.png" 
+						format="PNG"/> 
+					</imageobject>
+			  	</mediaobject> 
+			</screenshot> 
+		</figure>
+
+		<para>
+			Ésta carpeta debe contener algunos archivos que se usaran al momento de crear la imagen de la distribución.
+		</para>	
+	</sect2>
+
+	
+	<sect2 id="crear_archivo_sabor.config"> 
+		
+	  <title>Paso 2</title>
+
+		<para>
+			<menuchoice><guimenu>Crear un archivo llamado “sabor.conf”</guimenu></menuchoice>,el cual contiene una serie de parámetros que deben especificarse para poder crear el nuevo sabor.
+		</para>
+	
+
+		<figure id="archivo_sabor.config">
+			<title>Ejemplo de una ventana para configurar el archivo sabor.config</title>
+			<screenshot> 
+				<mediaobject>
+					<imageobject>
+						<imagedata fileref="figures/paso2.png" 
+						format="PNG"/> 
+					</imageobject>
+			  	</mediaobject> 
+			</screenshot> 
+		</figure>
+
+
+		<para>
+			<menuchoice><guimenu>Parámetros</guimenu></menuchoice>
+
+	        	<itemizedlist>
+		        <listitem>
+			        <para>
+				        Publicado por:  Individuo o colectivo que publica la imagen.
+	                        </para>
+		        </listitem>
+			<listitem>
+				<para>
+					Distribución Debian: Distribución Debian en la que se basa el sabor.
+	                        </para>
+		        </listitem>
+			<listitem>
+				<para>
+	                                Nombre de la Metadistribución: Distribución de la cual se parte para crear la nuevas distribuciones, en nuestro caso es Canaima GNU/Linux.
+		                </para>
+	                </listitem>
+		        <listitem>
+			        <para>
+				        Mirror Debian: Mirror de Debian desde donde se extraerán los paquetes que contendrá la la imagen. Los repositorios extra se definen en el archivo *.binary definido más adelante.
+	                        </para>
+		        </listitem>
+			<listitem>
+				<para>
+					Componentes del Mirror: Componentes del Mirror Debian a estar disponibles para la construcción de la imagen.
+	                        </para>
+	                </listitem>
+			<listitem>
+				<para>
+					Paquetes disponibles en el Mirror: Lista de paquetes disponibles en Mirror Debian o en alguna lista de repositorios extra.
+	                        </para>
+	                </listitem>
+			<listitem>
+				<para>
+					Paquetes Extra: Lista de paquetes no disponibles en Mirror Debian. Este parámetro es opcional y los paquetes aqui incluidos se les debe especificar los repositorios que los contienen en el archivo *.binary definido mas adelante.
+	                        </para>
+	                </listitem>
+
+		</itemizedlist>
+	</para>
+	
+
+
+	<para>
+		
+	</para>
+
+
+	<para>Para validar los paquetes que seran introducidos en <menuchoice><guimenu>Paquetes disponibles en el Mirror</guimenu></menuchoice> y <menuchoice><guimenu>Paquetes Extra</guimenu></menuchoice> se debe escribir el paquete en letras minúsculas dentro campo de texto y dar clic en el botón "Validar" y así visualizarlo en el cuadro de texto</para>
+
+		<figure id="validar_correcto">
+			<title>Validando un paquete existente para el archivo sabor.config</title>
+			<screenshot> 
+				<mediaobject>
+					<imageobject>
+						<imagedata fileref="figures/paso2-1.png" 
+						format="PNG"/> 
+					</imageobject>
+			  	</mediaobject> 
+			</screenshot> 
+		</figure>
+
+		<figure id="validar_incorrecto">
+			<title>Validando un paquete no existente para el archivo sabor.config</title>
+			<screenshot> 
+				<mediaobject>
+					<imageobject>
+						<imagedata fileref="figures/paso2-2.png" 
+						format="PNG"/> 
+					</imageobject>
+			  	</mediaobject> 
+			</screenshot> 
+		</figure>
+
+	<note>
+		<para>
+			Una vez especificados los parámetros del archivo "sabor.config" se debe dar clic en el botón "Siguiente>", para que los cambios se efectuen, de lo contrario no se efectuarán.
+		</para>
+	</note>
+
+		<figure id="finalizar_sabor.conf">
+			<title>Ejemplo de una ventana con el archivo "sabor.config" creado con éxito</title>
+			<screenshot> 
+				<mediaobject>
+					<imageobject>
+						<imagedata fileref="figures/paso2-3.png" 
+						format="PNG"/> 
+					</imageobject>
+			  	</mediaobject> 
+			</screenshot> 
+		</figure>
+	
+	</sect2>
+
+	<sect2 id="archivo_*.binary"> 
+		
+	  <title>Paso 3</title>
+
+		<para> 
+			En este paso se crea un archivo de extensión <menuchoice><guimenu>"*.binary"</guimenu></menuchoice> (pudiendo tener cualquier nombre), que contenga la lista de repositorios extra necesarios para la instalación de paquetes no incluídos en Mirror Debian, pero que han sido especificados en Paquetes Extra del archivo "sabor.conf".
+		</para>
+
+		<para>
+			El primer paso para crear el archivo "*.binary" es especificarle un nombre y luego validar cada uno de los repositorios que desee incluir, especificando la rama y la sección del repositorio con el fin de verificarlos. Por último debe dar clic en "Siguiente>" para aplicar los cambios efectuados y continuar. 
+		</para>
+
+		<figure id="*.binary">
+			<title>Ejemplo de ventana configurando el archivo ".binary"</title>
+			<screenshot> 
+				<mediaobject>
+					<imageobject>
+						<imagedata fileref="figures/paso3-1.png" 
+						format="PNG"/> 
+					</imageobject>
+			  	</mediaobject> 
+			</screenshot> 
+		</figure>
+
+		<figure id="*.binary_final">
+			<title>Ejemplo de ventana con el archivo ".binary" creado con éxito</title>
+			<screenshot> 
+				<mediaobject>
+					<imageobject>
+						<imagedata fileref="figures/paso3-2.png" 
+						format="PNG"/> 
+					</imageobject>
+			  	</mediaobject> 
+			</screenshot> 
+		</figure>
+
+	</sect2>
+	
+
+	<sect2 id="insertar_imágenes"> 
+		
+	  <title>Paso 4</title>
+
+		<para>
+			En este paso se insertarán dos imágenes opcionales, una para el fondo del menú de inicio del Medio Vivo y otra para el banner del dialogo del instalador del Medio Vivo, que servirán a la hora de instalar su distribución. Estas imágenes deben tener nombres y medidas especificas para poder ser introducidas en la carpeta del nuevo sabor.
+		</para>	
+
+		<itemizedlist>
+		        <listitem>
+			        <para>
+				        Imagen PNG llamada “syslinux.png” de una dimensión no mayor a 1024x768 pixeles, la cuál servirá de fondo en el menú de inicio del Medio Vivo.
+	                        </para>
+		        </listitem>
+			<listitem>
+				<para>
+					Imagen PNG llamada “banner-instalador.png” de una dimensión exacta de 800x75 pixeles, la cuál será el banner del dialogo del instalador del Medio Vivo.
+	                        </para>
+		        </listitem>
+		</itemizedlist>
+
+		<figure id="imágenes">
+			<title>Ejemplo de ventana insertando las imágenes</title>
+			<screenshot> 
+				<mediaobject>
+					<imageobject>
+						<imagedata fileref="figures/paso4-1.png" 
+						format="PNG"/> 
+					</imageobject>
+			  	</mediaobject> 
+			</screenshot> 
+		</figure>
+
+	<note>
+		<para>
+			Una vez introducidas de manera correcta las rutas de las imágenes, se debe dar clic en el botón "Siguiente>".
+		</para>
+	</note>
+
+		<para>
+			Introducir las imágenes al nuevo sabor es opcional, por lo que puede elegir si desea o no introducirlas.
+		</para>
+
+		<para>
+			Si selecciona <menuchoice><guimenu>NO</guimenu></menuchoice> el proceso continuará de manera correcta al Paso 5, donde se contruye la imagen.
+		</para>		
+
+		<para>
+			Si selecciona <menuchoice><guimenu>SI</guimenu></menuchoice> se validarán los paramétros para incluir las imágenes en el nuevo sabor. para que los mismos sean efectuados, de lo contrario las imágenes no se alamacenarán en la carpeta del nuevo sabor.
+		</para>
+
+		<figure id="imágenes_seleccionar">
+			<title>Ejemplo de ventana para elegir la inclusión de las imágenes</title>
+			<screenshot> 
+				<mediaobject>
+					<imageobject>
+						<imagedata fileref="figures/paso4-3.png" 
+						format="PNG"/> 
+					</imageobject>
+			  	</mediaobject> 
+			</screenshot> 
+		</figure>
+
+	<note>
+		<para>
+			Es importante seleccionar "SI", si desea incliur las imágenes para que los cambios sean efectuados, de lo contrario las imágenes no se alamacenarán en la carpeta del nuevo sabor.
+		</para>
+	</note>
+
+		<figure id="imágenes_final">
+			<title>Ejemplo de ventana insertando las imágenes</title>
+			<screenshot> 
+				<mediaobject>
+					<imageobject>
+						<imagedata fileref="figures/paso4-2.png" 
+						format="PNG"/> 
+					</imageobject>
+			  	</mediaobject> 
+			</screenshot> 
+		</figure>
+
+</sect2>
+
+	<sect2 id="ultimo_paso"> 
+		
+	  <title>Paso 5</title>
+		
+		<para> 
+			Por último se mostrará una ventana que permite crear las imagenes ISO, del sabor que usted ha construido y asi poder obtener una imagen grabable del mismo. Debe elegir el Medio (i386 ó amd64) y la Arquitectura (iso ó usb) con la que desea que se cree la imagen.
+		</para>
+		<figure id="ultima">
+			<title>Ejemplo de la ventana para constriur el sabor que se creó</title>
+			<screenshot> 
+				<mediaobject>
+					<imageobject>
+						<imagedata fileref="figures/paso5.png" 
+						format="PNG"/> 
+					</imageobject>
+			  	</mediaobject> 
+			</screenshot> 
+		</figure>
+
+	<note>
+		<para>
+			Si desea crear la imagen del nuevo sabor debe seleccionar "Generar", de lo contario seleccione "Salir"
+		</para>
+	</note>
+
+	<caution>
+		<para>
+			Es importante tener en cuenta que, si no posee una conexión a internet no podrá crear la imagen del nuevo sabor.
+		</para>
+
+	</caution>
+
+	</sect2>
+
+</sect1>
+
+
+<sect1 id="myapp-about"> 
+	<title>
+		Acerca de &app;
+	</title> 
+	<para> 
+			&app; Escrito originalmente por Luis A. Martínez F.
+	</para>
+
+	<para> 
+			&app; Interfaz Gráfica desarrollada por Nixon Molina y Carlos Espinoza, como proyecto de pasantías de la carrera Ingeniería de Sistemas en la Universidad Nacional Experimental de la Fuerza Armada (UNEFA). 
+	</para>
+	<para>
+		Para informar de un fallo o hacer una sugerencia
+		concerniente a &app; 
+		o a este manual, ingrese al sitio web <ulink url="http://canaima.softwarelibre.gob.ve">http://canaima.softwarelibre.gob.ve</ulink>, o 			contacte a través del correo <email>desarrolladores@canaima.softwarelibre.gob.ve</email>.
+	</para>
+	<para> 
+		Este programa se distribuye bajo los términos de la
+		Licencia Pública General GNU.
+	</para>
+</sect1> 
+
+
+</article>

@@ -1,0 +1,16 @@
+Source: canaima-semilla-gui
+Section: misc
+Priority: extra
+Maintainer: Equipo de Desarrollo de Canaima GNU/Linux <desarrolladores@canaima.softwarelibre.gob.ve>
+Uploaders: Nixon Molina <nixonmolina18@gmail.com> Carlos Espinoza <carlosarmikhael@gmail.com>
+Build-Depends: cdbs, debhelper (>= 7.0.50~)
+Standards-Version: 3.9.1
+#Homepage: http://canaima.softwarelibre.gob.ve/
+#Vcs-Git: git://gitorious.org/canaima-gnu-linux/canaima-semilla-gui.git
+#Vcs-Browser: git://gitorious.org/canaima-gnu-linux/canaima-semilla-gui.git
+
+Package: canaima-semilla-gui
+Architecture: all
+Depends: canaima-semilla, python, python-gtk2, python-gobject, python-imaging, python-imaging-dbg, ${shlibs:Depends}, ${misc:Depends}
+Description: Interfaz gráfica de canaima-semilla.
+ Permite crear imagenes ISO y distribuciones canaima GNU/Linux.

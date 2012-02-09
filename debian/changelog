@@ -1,0 +1,35 @@
+canaima-semilla-gui (1.0-5) unstable; urgency=low
+
+  * [f7415db] mejores del codigo
+
+ -- Carlos adrian Espinoza Fermin <carlosarmikhael@gmail.com>  Wed, 01 Feb 2012 13:38:05 -0430
+
+canaima-semilla-gui (1.0-4) unstable; urgency=low
+
+  * [b15f8cc] cambios prueba
+
+ -- Carlos adrian Espinoza Fermin <carlosarmikhael@gmail.com>  Tue, 31 Jan 2012 17:14:02 -0430
+
+canaima-semilla-gui (1.0-3) unstable; urgency=low
+
+  * [0e665ba] cambios prueba
+
+ -- Carlos adrian Espinoza Fermin <carlosarmikhael@gmail.com>  Tue, 31 Jan 2012 17:09:40 -0430
+
+canaima-semilla-gui (1.0-2) unstable; urgency=low
+
+  * [46d949d] cambios prueba
+
+ -- Carlos adrian Espinoza Fermin <carlosarmikhael@gmail.com>  Tue, 31 Jan 2012 17:07:55 -0430
+
+canaima-semilla-gui (1.0-1) unstable; urgency=low
+
+  * [ff69370] corrigiendo ayuda
+
+ -- Carlos adrian Espinoza Fermin <carlosarmikhael@gmail.com>  Tue, 31 Jan 2012 17:06:04 -0430
+
+canaima-semilla-gui (1.0+0) unstable; urgency=low
+
+  * Versión inicial de canaima-semilla-gui para Canaima GNU/Linux
+
+ -- Carlos adrian Espinoza Fermin <carlosarmikhael@gmail.com>  Tue, 31 Jan 2012 16:49:58 -0430

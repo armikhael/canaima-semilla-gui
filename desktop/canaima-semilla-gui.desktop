@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=Interfaz Gráfica para Canaima-Semilla.
+Icon=/usr/share/icons/canaima-iconos/apps/48/c-s.png
+Comment=Canaima-Semilla-GUI:Interfaz gráfica para canaima-semilla 
+Exec=su-to-root -X -c /usr/bin/canaima-semilla-gui 
+Terminal=false
+Type=Application
+Categories=GTK;Development;
+StartupNotify=False
+Name[es_VE]=Canaima Semilla GUI
+Icon[es_VE]=/usr/share/icons/canaima-iconos/apps/48/c-s.png

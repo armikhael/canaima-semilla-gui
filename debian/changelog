@@ -1,8 +1,12 @@
 canaima-semilla-gui (1.0-5) unstable; urgency=low
 
+  [ Carlos adrian Espinoza Fermin ]
   * [f7415db] mejores del codigo
 
- -- Carlos adrian Espinoza Fermin <carlosarmikhael@gmail.com>  Wed, 01 Feb 2012 13:38:05 -0430
+  [ Carlos Espinoza ]
+  * [6d199bb] Prueba
+
+ -- Carlos Espinoza <carlosarmikhael@gmail.com>  Tue, 04 Sep 2012 15:30:54 +0000
 
 canaima-semilla-gui (1.0-4) unstable; urgency=low
 
